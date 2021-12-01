@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;500&display=swap');
+
+:root {
+	--primary:#00a8ff;
+	--secondary: #31fbf8;
+	--pure: #fff;
+	--background: rgb(235, 235, 235);
+}
+
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9rem;
+	color: #585858;
+}
+.btn-primary {
+	padding: 10px 30px; margin-top: 10px;
+	font-size: 15px;
+	font-family: montserrat;
+	font-weight: 500;
+	background: linear-gradient(to right,var(--secondary),var(--primary));
+	border: none;
+	color: var(--pure);
+	border-radius: 3px;
+	box-shadow: 10px 10px 10px 0 #0000002b;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.btn-primary:hover {
+	color: #030303;
+	background-position: 0px;
+}
+ 
+
+.flex-center {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.flex-justify {
+	display:flex;
+	justify-content:center;
+}
+.flex-items {
+	display:flex;
+	align-items:center;
+}
+.clear {
+	clear:both;
+}
+
+.header-text {
+	text-align: center;
+	font-family: montserrat;
+	color: var(--primary);
+	margin: 3rem 0;
+}
+.header-text span {
+	position: relative;
+}
+.header-text span::after {
+	content: "";
+	width: 50%;
+	height: 3px;
+	background: var(--secondary);
+	position: absolute;
+	display: inline-block;
+	bottom: -7px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
