@@ -43,5 +43,9 @@ window.addEventListener("scroll", function(){
 
 
 
+let setting = document.querySelector("section.header .setting i");
 
+setting.addEventListener("click",function(){
+    setting.parentElement.classList.toggle("show")
+})
 

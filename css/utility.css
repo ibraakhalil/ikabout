@@ -7,7 +7,8 @@
 	--dark: black;
 	--background: #ebebeb;
 	--para: #605555;
-	--darkBlue:#070128;
+	--darkBlue:#11074e;
+	--dropdown:#f4f8ff;
 }
 
 
@@ -18,6 +19,7 @@
 	padding:0;
 	margin:0;
 	box-sizing:border-box;
+	transition: 0.2s;
 }
 
 .container {
@@ -37,6 +39,9 @@ ul, ol {
 }
 a {
 	text-decoration: none;
+}
+img {
+	width: 100%;
 }
 
 

@@ -25,7 +25,7 @@ section.header .header-left {
 	justify-content: space-between;
 	width: 100%;
 }
-section.header .header-left img {
+section.header .header-left .logo img {
 	width: 250px;
 	margin: 0px 10px;
 	transition: 0.3s;
@@ -72,14 +72,69 @@ section.header .header-right {
 }
 section.header .setting {
 	cursor: pointer;
+	position: relative;
 }
-section.header .setting i {
+section.header .setting > i {
 	font-size: 24px;
 	transition: 0.5s;
 }
-section.header .setting:hover i {
+section.header .setting.show > i {
 	transform: rotate(90deg);
 }
+.dropdown {
+	width: 200px;
+	border-radius: 10px;
+	background: var(--dropdown);
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 80px;
+	box-shadow: 0 10px 12px 0 #00000014;
+	transition: 0.5s;
+	visibility: hidden;
+	opacity: 0;
+}
+section.header .setting.show .dropdown {
+	opacity: 1;
+	top: 40px;
+	visibility: visible;
+}
+.dropdown .theme {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 1rem;
+	background: var(--background);
+}
+.dropdown .theme img {
+	height: 40px;
+	object-fit: cover;
+	width: 40px;
+	border-radius: 50%;
+}
+.dropdown ul {
+	font-family: montserrat;
+	margin-top: 1rem;
+}
+.dropdown ul li {
+	padding: 0.7rem 1rem;
+	display: flex;
+	align-items: center;
+}
+.dropdown ul li:hover {
+	background: var(--pure);
+}
+.dropdown ul li i {
+	font-size: 16px;
+	color: var(--primary);
+	margin-right: 12px;
+}
+.dropdown ul li a {
+	color: var(--para);
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
 section.header .bar {
 	display: none;
 }
@@ -88,7 +143,7 @@ section.header .bar {
 .header.scrolled {
 	height: 90px;
 }
-.header.scrolled .header-left img {
+.header.scrolled .header-left .logo img {
 	width: 180px;
 }
 .header.scrolled .header-left .header-menu li {
