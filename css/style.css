@@ -1,145 +1,116 @@
 
-* {
-	padding:0;
-	margin:0;
-	box-sizing:border-box;
-}
-
-.container {
-	width: 1100px;
-	margin: 0 auto;
-}
 
 
-
-
-/* =======================================Nav Header Area========================================= */
-
-.header {
+/******************************************
+	Header Area
+*******************************************/
+section.header {
 	background: linear-gradient(to right,var(--primary),var(--secondary));
 	width: 100%;
-	height: 100px;
+	height: 140px;
 	box-shadow: 0 0 15px 0 #00000075;
+	position: fixed;
+	z-index: 500;
+	transition: 0.5s;
 }
-.header-wrapper {
+section.header .header-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 100%;
 }
 
-.header-left {
+section.header .header-left {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 }
-.header-left .logo {
-	display: flex;
-	align-items: center;
-	margin-right: 3rem;
-}
-.header-left img {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	background: var(--pure);
-	border: 5px solid var(--pure);
+section.header .header-left img {
+	width: 250px;
 	margin: 0px 10px;
-	object-fit: cover;
+	transition: 0.3s;
 }
-.header-left h1 {
+section.header .header-left h1 {
 	font-family: montserrat;
 	letter-spacing: -1px;
 	color: #464637;
 }
-.header-left .header-menu {
-	height: 100px;
-}
-.header-left  .header-menu ul {
-	list-style: none;
+section.header .header-left .header-menu ul {
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 100%;
-	margin-left: 2rem;
+	justify-content: space-between;
 }
-
-.header-left .header-menu li {
-	margin-right: 3rem;
-	height: 100%;
+section.header .header-left .header-menu li {
 	font-weight: 500;
 	font-family: montserrat;
-	letter-spacing: 1px;
 	cursor: pointer;
 	position: relative;
 	display: flex;
-	align-items: center;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 14px;
+	margin: 0 1.3rem;
+	color: var(--dark);
+	transition: 0.3s;
 }
-.header-left  .header-menu ul li::after {
+section.header .header-left .header-menu ul li::after {
 	content: "";
 	width: 0%;
 	height: 3px;
 	position: absolute;
-	background: black;
-	left: 0; 
-	bottom: 0;
+	background: linear-gradient(to right, var(--primary), var(--darkBlue));
+	left: 0;
+	top: 160%;
 	transition: all 0.3s;
 }
-.header-left  .header-menu li:hover::after {
+section.header .header-left  .header-menu li:hover::after {
 	width: 100%;
 }
 
-.header-right {
+section.header .header-right {
 	height: 100%;
 	display: none;
 	align-items: center;
 }
-.header-right .search {
-	background: rgb(255, 255, 255);
-	border-radius: 50px;
-	height: 39px; padding: 2px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	transition: all 0.3s; 
+section.header .setting {
+	cursor: pointer;
 }
-.header-right input { 
-	height: 100%;
-	width: 0px;
-	border: none;
-	outline: none;
-	background: none;
-	transition: all 0.4s;
-	opacity: 0;
+section.header .setting i {
+	font-size: 24px;
+	transition: 0.5s;
 }
-.header-right .search i {  
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 35px;
-	width: 35px;
-	border-radius: 50%;
-	background: black;
-	color:var(--pure);
-	transition:0.3s;    
+section.header .setting:hover i {
+	transform: rotate(90deg);
 }
-.header-right .search:hover > input,.header-right input:focus  {
-	width: 150px;
-	padding: 0 10px; 
-	opacity: 1; 
-}  
 section.header .bar {
 	display: none;
 }
 
 
+.header.scrolled {
+	height: 90px;
+}
+.header.scrolled .header-left img {
+	width: 180px;
+}
+.header.scrolled .header-left .header-menu li {
+	font-size: 13px;
+}
+.header.scrolled .header-left .header-menu li:hover {
+	color: var(--para);
+}
 
-/* ==================================Content Area================================ */
+
+
+
+
+
+/******************************************
+	Content Area
+*******************************************/
 
 .content {
-	height: calc(100vh - 100px);
+	height: 100vh;
 	overflow: hidden;
+	padding-top: 100px;
 }
 
 .content-wrapper {
@@ -148,7 +119,9 @@ section.header .bar {
 	align-items: center;
 	justify-content: space-between;
 }
-
+section.content .introduce {
+	width: 100%;
+}
 .introduce h2 {
 	font-family: montserrat;
 	font-weight: 300;
@@ -163,11 +136,12 @@ section.header .bar {
 	text-shadow: 10px 10px 10px #00000038;	
 	color: #03ADFF;
 }
-.introduce p {
+.introduce h4 {
 	font-size: 22px;
 	font-family: montserrat;
 	color: gray;
 	text-shadow: 10px 10px 10px #00000038;
+	font-weight: 500;
 }
 
 .content .btn-1 {
@@ -177,20 +151,32 @@ section.header .bar {
 
 .content .content-img {
 	position: relative;
+	width: 100%;
+	height: 100%;
 }
 .content .content-wrapper img {
-	width: 350px;
-	opacity: 0.8;
+	width: 550px;
+	position: absolute;
+	right: 0;
+	bottom: 35px;
+	z-index: 10;
 }
 
 
 
 
-.Services {
+/******************************************
+	Services Area
+*******************************************/
+
+section.Services {
 	width: 100%;
 	min-height: 500px;
 	padding: 30px 0px;
 	font-family: montserrat;
+}
+section.services .services-top {
+	margin-bottom: 6rem;
 }
 .services-top h1 {
 	text-align: center;
@@ -199,50 +185,48 @@ section.header .bar {
 }
 .services-top p {
 	text-align: center;
-	max-width: 400px;
-	margin: 0 auto;
+	max-width: 50%;
+	margin: 2rem auto;
 	line-height: 25px;
-	color: #605555;
+	color: var(--para);
+	font-size: 15px;
 }
 .services ul {
-	display: flex;
-	list-style: none;
+	display: grid;
 	width: 100%;
 	margin: 50px 0px;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 4rem 2rem;
 }
 .services ul li {
-	width: 250px;
-	height: 140px;
 	background: linear-gradient(45deg, var(--primary), var(--secondary));
-	margin: 40px 10px;
 	position: relative;
-	color: var(--pure);
-	text-align: center;
 	border-radius: 10px;
+	padding-bottom: 1rem;
+	text-align: center;
+	min-height: 160px;
 }
 .services ul li i {
+	font-size: 25px;
+	background: var(--primary);
+	color: var(--pure);
 	position: absolute;
-	top: -30px;
 	width: 60px;
 	height: 60px;
-	background: var(--primary);
+	left: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
-	font-size: 25px;
-	left: 95px;
+	transform: translate(-50%, -50%);
 }
-
 .services ul li h3 {
-	margin-top: 40px;
-	font-size: 20px;
-	color: #2d2d2d;
+	margin-top: 3rem;
+	font-size: 22px;
+	color: var(--darkBlue);
 }
 .services ul li p {
-	font-size: 11px;
+	font-size: 13px;
 	padding: 10px 30px;
 }
 
@@ -250,12 +234,16 @@ section.header .bar {
 
 
 
+/******************************************
+	About-Me Area
+*******************************************/
+
 .about-me {
 	background: linear-gradient(45deg, #91d2f3,#a6fefb);
 	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 85%, 0% 100%);
 }
 .about-me h1 {
-	padding-top: 2rem;
+	padding-top: 4rem;
 	color: var(--pure);
 	font-family: montserrat;
 }
@@ -299,7 +287,6 @@ section.about-me .right > div {
 	margin: 15px 0;
 }
 section.about-me .right p strong {
-	float: left;
 	width: 175px;
 	position: relative;
 }
@@ -308,10 +295,18 @@ section.about-me .right p strong::after {
 	position: absolute;
 	right: 20px;
 }
+.about-me .right p strong {
+	position: relative;
+	width: 150px;
+	display: inline-block;
+}
 
 
 
-/* =======================Social Icon Style====================== */
+/******************************************
+	Social Area
+*******************************************/
+
 
 .social {
 	font-size: 0em;
@@ -338,6 +333,10 @@ section.about-me .right p strong::after {
 
 
 
+
+/******************************************
+	Education Area
+*******************************************/
 
 section.education {
 	font-family: montserrat;
@@ -442,7 +441,9 @@ section.education .right .skill > div div span p {
 
 
 
-
+/******************************************
+	Contact Area
+*******************************************/
 
 section.contact {
 	background: var(--background);
@@ -529,6 +530,13 @@ section.contact .btn-2 {
 }
 
 
+
+
+
+/******************************************
+	Footer Area
+*******************************************/
+
 footer {
 	background: linear-gradient(to right,var(--primary),var(--secondary));
 	width: 100%;
@@ -539,11 +547,30 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1120px) {
 	.container {
 		width: 90%;
 	}
 }
+
+
+
 @media (max-width: 992px) {
 	.container {
 		width: 90%;
@@ -568,6 +595,8 @@ footer {
 		padding-top: 3rem;
 	}
 }
+
+
 
 @media (max-width: 768px) {
 	.container {
@@ -648,6 +677,7 @@ footer {
 	}
 }
 
+
 @media (max-width: 600px) {
 
 	.introduce h1 {
@@ -682,9 +712,6 @@ footer {
 	section.about-me .right .social {
 		text-align: center;
 	}
-
-
-
 
 
 	section.education .wrapper {
