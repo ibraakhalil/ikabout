@@ -67,10 +67,23 @@ setting.addEventListener("click",function(){
 
 
 
+//////////////////////Theme switcher///////////////////////
 
-
-
-
+let input = document.querySelector(".dropdown .theme-switch .switch input");
+let switching = document.querySelector(".dropdown .theme-switch .switch");
+let body = document.querySelector("body");
+switching.addEventListener("click", function(){
+    if(input.checked) {
+        body.classList.add("checked")
+    } else {
+        body.classList.remove("checked")
+    }
+})
+if(input.checked) {
+    body.classList.add("checked")
+} else {
+    body.classList.remove("checked")
+}
 
 
 

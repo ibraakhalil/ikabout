@@ -1,0 +1,257 @@
+
+/******************************************
+	Desktop
+*******************************************/
+
+@media (max-width: 1120px) {
+	.container {
+		width: 90%;
+	}
+}
+
+
+
+/******************************************
+	Tablet
+*******************************************/
+
+@media (max-width: 992px) {
+	.container {
+		width: 90%;
+	}
+    section.header {
+        height: 120px;
+    }
+    section.header .setting {
+        display: none;
+    }
+    section.header .social a:nth-child(1) {
+		display: none;
+	}
+	section.header .bar {
+		position: relative;
+		display: block;
+		margin-right: 1rem;
+	}
+	section.header .bar i {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		font-size: 26px;
+		cursor: pointer;
+	}
+	section.header .bar i:nth-child(2) {
+		display: none;
+	}
+	.header-left .header-menu {
+        height: 100vh;
+        background: #ecd4d4;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        display: block;
+        transform: translateX(-100%);
+    }
+	.header-left .header-menu ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		width: 200px;
+		margin: 2rem 0;
+		height: auto;
+	}
+
+	.header-left .header-menu li {
+		text-transform: uppercase;
+		font-family: montserrat;
+		padding: 1.5rem 0.8rem;
+		margin: 0;
+		width: 100%;
+	}
+	.header-left .header-menu li::after {
+		display: none;
+	}
+
+	section.content .introduce {
+		margin-top: 5rem;
+	}
+	.content {
+		height: 620px;
+	}
+	.content-wrapper {
+		display: block;
+	}
+    .content .content-img {
+        height: 100%;
+    }
+	.content .content-wrapper img {
+        width: 605px;
+        position: absolute;
+        top: -60%;
+        z-index: -10;
+        right: 0px;
+        opacity: 0.4;
+    }
+	section.about-me .right {
+		padding: 0;
+	}
+	section.contact .right .input-wrapper {
+		grid-template-columns: 1fr;
+	}
+    .services-top p {
+        max-width: 70vw;
+    }
+    .services ul {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4rem 8vw;
+    }
+
+}
+
+
+
+/******************************************
+	Landscap Mobile
+*******************************************/
+
+@media (max-width: 768px) {
+	.container {
+		width: 90%;
+	}
+	section.header .social a:nth-child(1) {
+		display: none;
+	}
+	section.header .bar {
+		position: relative;
+		display: block;
+		margin-right: 1rem;
+	}
+	section.header .bar i {
+		position: absolute;
+		transform: translate(-50%, -50%);
+		font-size: 26px;
+		cursor: pointer;
+	}
+	section.header .bar i:nth-child(2) {
+		display: none;
+	}
+	section.header {
+		position: relative;
+	}
+	.header-left .header-menu {
+		height: 100vh;
+		background: #ecd4d4;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		display: block;
+		transform: translateX(-100%);
+	}
+	.header-left .header-menu ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		width: 200px;
+		margin: 2rem 0;
+		height: auto;
+	}
+
+	.header-left .header-menu li {
+		text-transform: uppercase;
+		font-family: montserrat;
+		padding: 1.5rem 0.8rem;
+		margin: 0;
+		width: 100%;
+	}
+	.header-left .header-menu li::after {
+		display: none;
+	}
+
+	section.content .introduce {
+		margin-top: 5rem;
+	}
+	.content {
+		height: 620px;
+	}
+	.content-wrapper {
+		display: block;
+	}
+	.content .content-wrapper img {
+		width: 420px;
+		position: absolute;
+		top: -115px;
+		z-index: -10;
+		right: 0;
+	}
+	section.about-me .right {
+		padding: 0;
+	}
+	section.contact .right .input-wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+
+
+
+/******************************************
+	Mobile
+*******************************************/
+
+@media (max-width: 580px) {
+
+	.introduce h1 {
+		font-size: 2.5rem;
+	}
+
+	.content .content-wrapper img {
+		width: 350px;
+		top: -75px;
+		opacity: 0.5;
+	}
+
+	.about-me {
+		clip-path: none;
+		padding: 3rem 0;
+	}
+	.about-me h1 {
+		padding: 0;
+		margin: 0 0 3rem 0;
+	}
+	.about-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.about-me .left img {
+		width: 50%;
+		margin-left: -25px;
+	}
+	section.about-me .right {
+		margin-top: 1rem;
+		justify-self: center;
+	}
+	section.about-me .right .social {
+		text-align: center;
+	}
+
+
+	section.education .wrapper {
+		grid-template-columns: 1fr;
+	}
+	section.education .left {
+		order: 1;
+		margin-top: 3rem;
+	}
+	section.contact .left {
+		margin-bottom: 4rem;
+	}
+	section.contact .contact-wrapper {
+		grid-template-columns: 1fr;
+	}
+	section.contact .right .input-wrapper div label {
+		font-size: 14px;
+	}
+}
+
+
+
+

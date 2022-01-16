@@ -8,10 +8,9 @@ section.header {
 	background: linear-gradient(to right,var(--primary),var(--secondary));
 	width: 100%;
 	height: 140px;
-	box-shadow: 0 0 15px 0 #00000075;
+	box-shadow: 0 8px 10px 0 var(--shadow);
 	position: fixed;
 	z-index: 500;
-	transition: 0.5s;
 }
 section.header .header-wrapper {
 	display: flex;
@@ -28,7 +27,6 @@ section.header .header-left {
 section.header .header-left .logo img {
 	width: 250px;
 	margin: 0px 10px;
-	transition: 0.3s;
 }
 section.header .header-left h1 {
 	font-family: montserrat;
@@ -40,7 +38,7 @@ section.header .header-left .header-menu ul {
 	justify-content: space-between;
 }
 section.header .header-left .header-menu li {
-	color: var(--turki);
+	color: var(--nav);
 	cursor: pointer;
 	display: flex;
 	font-size: 14px;
@@ -49,7 +47,6 @@ section.header .header-left .header-menu li {
 	margin: 0 1.3rem;
 	position: relative;
 	text-transform: uppercase;
-	transition: 0.3s;
 }
 section.header .header-left .header-menu li:hover {
 	color: var(--dark);
@@ -62,11 +59,11 @@ section.header .header-left .header-menu ul li::after {
 	left: 0;
 	position: absolute;
 	top: 160%;
-	transition: all 0.3s;
 }
 section.header .header-left  .header-menu li:hover::after {
 	width: 100%;
 }
+
 
 section.header .header-right {
 	height: 100%;
@@ -74,17 +71,18 @@ section.header .header-right {
 	align-items: center;
 }
 section.header .setting {
-	cursor: pointer;
 	position: relative;
 }
 section.header .setting > i {
 	font-size: 24px;
-	transition: 0.5s;
+	cursor: pointer;
+	color: var(--dark);
 }
 section.header .setting.show > i {
 	transform: rotate(90deg);
 }
-.dropdown {
+
+section.header .dropdown {
 	width: 200px;
 	border-radius: 10px;
 	background: var(--dropdown);
@@ -92,8 +90,7 @@ section.header .setting.show > i {
 	position: absolute;
 	right: 0;
 	top: 80px;
-	box-shadow: 0 10px 12px 0 #00000014;
-	transition: 0.5s;
+	box-shadow: 0 7px 11px 0 var(--shadow);
 	visibility: hidden;
 	opacity: 0;
 }
@@ -101,6 +98,7 @@ section.header .setting.show .dropdown {
 	opacity: 1;
 	top: 40px;
 	visibility: visible;
+	background: var(--dropdown);
 }
 .dropdown .theme {
 	display: flex;
@@ -124,6 +122,9 @@ section.header .setting.show .dropdown {
 	display: flex;
 	align-items: center;
 }
+.dropdown ul li:last-child {
+	padding-bottom: 1.2rem;
+}
 .dropdown ul li:hover {
 	background: var(--pure);
 }
@@ -137,9 +138,50 @@ section.header .setting.show .dropdown {
 	font-size: 13px;
 	text-transform: uppercase;
 }
-.theme-switch input {
-	width: 20px;
+.dropdown .theme-switch .switch {
+	width: 40px;
 	height: 20px;
+	display: grid;
+	background: var(--pure);
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	box-shadow: inset 0px -1px 5px 0px #0000002e;
+}
+.dropdown .theme-switch .switch input {
+	position: absolute;
+	opacity: 0;
+	z-index: -10;
+}
+.dropdown .theme-switch .switch input:checked ~ div {
+	transform: translate3d(100%, 0px, 0px);
+}
+.dropdown .theme-switch .switch div {
+	width: 20px;
+	height: 100%;
+	background: var(--primary);
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.dropdown .theme-switch .switch div i {
+	font-size: 14px;
+	position: absolute;
+}
+.dropdown .theme-switch .switch div i:first-child {
+	opacity: 0;
+}
+.dropdown .theme-switch .switch div i:last-child {
+	color: var(--pure);
+	opacity: 1;
+}
+body.checked .dropdown .theme-switch .switch div i:first-child {
+	opacity: 1;
+}
+body.checked .dropdown .theme-switch .switch div i:last-child {
+	opacity: 0;
 }
 section.header .bar {
 	display: none;
@@ -154,9 +196,6 @@ section.header .bar {
 }
 .header.scrolled .header-left .header-menu li {
 	font-size: 13px;
-}
-.header.scrolled .header-left .header-menu li:hover {
-	color: var(--para);
 }
 
 
@@ -187,7 +226,7 @@ section.content .introduce {
 	font-family: montserrat;
 	font-weight: 300;
 	letter-spacing: 2px;
-	color: #000000;
+	color: var(--dark);
 	font-size: 18px;
 }
 .introduce h1 {
@@ -269,7 +308,7 @@ section.services .services-top {
 }
 .services ul li i {
 	font-size: 25px;
-	background: var(--primary);
+	background: var(--nav);
 	color: var(--pure);
 	position: absolute;
 	width: 60px;
@@ -301,12 +340,12 @@ section.services .services-top {
 *******************************************/
 
 .about-me {
-	background: linear-gradient(45deg, #91d2f3,#a6fefb);
+	background: var(--background);
 	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 85%, 0% 100%);
 }
 .about-me h1 {
 	padding-top: 4rem;
-	color: var(--pure);
+	color: var(--primary);
 	font-family: montserrat;
 }
 .about-top {
@@ -451,10 +490,12 @@ section.education .left .timeline > div::before {
 section.education .left .timeline > div h4 {
 	font-size: 14px;
 	font-weight: 500;
+	color: var(--dark);
 }
 section.education .left .timeline > div h5 {
 	font-weight: 300;
 	font-size: 12px;
+	color: var(--para);
 }
 section.education .left .timeline > div p {
 	font-size: 13px;
@@ -466,14 +507,15 @@ section.education .timeline-header i {
 }
 section.education .timeline-header h3 {
 	font-weight: 400;
+	color: var(--dark);
 }
-
 section.education .right .skill > div {
 	margin-bottom: 2rem;
 }
 section.education .right .skill > div h5 {
 	font-weight: 500;
 	margin-left: 5px;
+	color: var(--dark);
 }
 section.education .right .skill > div div {
 	width: 100%;
@@ -542,6 +584,7 @@ section.contact .left h3 {
 	font-weight: 500;
 	font-size: 1rem;
 	margin-bottom: 5px;
+	color: var(--dark);
 }
 section.contact .left p {
 	font-size: 13px;
@@ -562,30 +605,33 @@ section.contact .right label {
 	font-size: 14px;
 }
 section.contact .right .input-wrapper div label {
-	margin-bottom: 5px;
+	margin-bottom: 1rem;
+	color: var(--dark);
 }
 section.contact .right .input-wrapper div input {
-	height: 30px;
-	padding: 5px;
+	height: 40px;
+	padding: 5px 1rem;
 	outline: none;
-	border: 1px solid var(--secondary);
+	border: none;
+	background: var(--dropdown);
+	color: var(--dark);
 }
 section.contact .right .text-area {
 	display: flex;
 	flex-direction: column;
 }
 section.contact .right .text-area label {
-	margin-bottom: 5px;
+	margin-bottom: 1rem;
+	color: var(--dark);
 }
 section.contact .right .text-area textarea {
-	height: 150px;
+	height: 180px;
 	outline: none;
-	padding: 5px;
-	border: 1px solid var(--secondary);
+	padding: 1rem;
+	border: none;
+	background: var(--dropdown);
+	color: var(--dark);
 }
-section.contact .right .input-wrapper div input:focus, section.contact .right .text-area textarea:focus {
-	border: 1px solid var(--primary);
-} 
 section.contact .btn-2 {
 	text-align: center;
 	margin-top: 2rem;
@@ -636,192 +682,8 @@ footer .social h3 {
 }
 .copyright p {
 	text-align: center;
-	color: var(--ternery);
+	color: var(--pure);
 	padding: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1120px) {
-	.container {
-		width: 90%;
-	}
-}
-
-
-
-@media (max-width: 992px) {
-	.container {
-		width: 90%;
-	}
-	section.header .social a {
-		display: none;
-	}
-	section.header .social a:nth-child(1) {
-		display: block;
-	}
-	.content {
-		height: 600px;
-	}
-	.content .content-wrapper img {
-		width: 400px;
-	}
-	.about-me .left img {
-		width: 80%;
-		margin-left: 2rem;
-	}
-	section.about-me .right {
-		padding-top: 3rem;
-	}
-}
-
-
-
-@media (max-width: 768px) {
-	.container {
-		width: 90%;
-	}
-	section.header .social a:nth-child(1) {
-		display: none;
-	}
-	section.header .bar {
-		position: relative;
-		display: block;
-		margin-right: 1rem;
-	}
-	section.header .bar i {
-		position: absolute;
-		transform: translate(-50%, -50%);
-		font-size: 26px;
-		cursor: pointer;
-	}
-	section.header .bar i:nth-child(2) {
-		display: none;
-	}
-	section.header {
-		position: relative;
-	}
-	.header-left .header-menu {
-		height: 100vh;
-		background: #ecd4d4;
-		position: absolute;
-		left: 0;
-		top: 100%;
-		display: block;
-		transform: translateX(-100%);
-		transition: all 0.3s;
-	}
-	.header-left .header-menu ul {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		width: 200px;
-		margin: 2rem 0;
-		height: auto;
-	}
-
-	.header-left .header-menu li {
-		text-transform: uppercase;
-		font-family: montserrat;
-		padding: 1.5rem 0.8rem;
-		margin: 0;
-		width: 100%;
-	}
-	.header-left .header-menu li::after {
-		display: none;
-	}
-
-	section.content .introduce {
-		margin-top: 5rem;
-	}
-	.content {
-		height: 620px;
-	}
-	.content-wrapper {
-		display: block;
-	}
-	.content .content-wrapper img {
-		width: 420px;
-		position: absolute;
-		top: -115px;
-		z-index: -10;
-		right: 0;
-	}
-	section.about-me .right {
-		padding: 0;
-	}
-	section.contact .right .input-wrapper {
-		grid-template-columns: 1fr;
-	}
-}
-
-
-@media (max-width: 600px) {
-
-	.introduce h1 {
-		font-size: 2.5rem;
-	}
-
-	.content .content-wrapper img {
-		width: 350px;
-		top: -75px;
-		opacity: 0.5;
-	}
-
-	.about-me {
-		clip-path: none;
-		padding: 3rem 0;
-	}
-	.about-me h1 {
-		padding: 0;
-		margin: 0 0 3rem 0;
-	}
-	.about-wrapper {
-		grid-template-columns: 1fr;
-	}
-	.about-me .left img {
-		width: 50%;
-		margin-left: -25px;
-	}
-	section.about-me .right {
-		margin-top: 1rem;
-		justify-self: center;
-	}
-	section.about-me .right .social {
-		text-align: center;
-	}
-
-
-	section.education .wrapper {
-		grid-template-columns: 1fr;
-	}
-	section.education .left {
-		order: 1;
-		margin-top: 3rem;
-	}
-	section.contact .left {
-		margin-bottom: 4rem;
-	}
-	section.contact .contact-wrapper {
-		grid-template-columns: 1fr;
-	}
-	section.contact .right .input-wrapper div label {
-		font-size: 14px;
-	}
-}
-
-
 
 

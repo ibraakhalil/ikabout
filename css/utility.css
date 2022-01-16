@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Open+Sans:wght@300;400;500&display=swap');
 
 :root {
-	--primary: #0094e1;
+	--primary: #00a8ff;
 	--secondary: #31fbf8;
 	--pure: #fff;
 	--dark: black;
-	--background: #ebebeb;
+	--background: #eaf0f4;
 	--para: #605555;
 	--darkBlue: #02052b;
 	--dropdown: #f4f8ff;
@@ -16,17 +16,33 @@
 	--prestige: #2f3542;
 	--grass: #009432;
 	--ternery: #b4b4b4;
+	--nav: #272933;
+	--shadow: #00000018;
 }
 
-
-
+body {
+	background: var(--pure);
+}
+body.checked {
+	--primary: #4b70ff;
+	--secondary: #07348a;
+	--pure: black;
+	--dark: white;
+	--background: #101320;
+	--para: #ceb6b6;
+	--dropdown: #030d13;
+	--nav: #b2bbdd;
+	--shadow: #ffffff14;
+	--darkBlue: #b9bbd0;
+	--copyright: #a0afb3;
+}
 
 
 * {
 	padding:0;
 	margin:0;
 	box-sizing:border-box;
-	transition: 0.2s;
+	transition: 0.3s;
 }
 
 .container {
@@ -60,7 +76,7 @@ img {
 	font-family: montserrat;
 	font-weight: 500;
 	border: none;
-	color: var(--pure);
+	color: var(--dark);
 	border-radius: 3px;
 	box-shadow: 5px 10px 12px 0 #00000025;
 	cursor: pointer;
@@ -88,7 +104,7 @@ img {
 	font-size: 20px;
 	bottom: -5px;
 	font-weight: 600;
-	color: var(--pure);
+	color: var(--dark);
 }
 .btn:hover span {
 	visibility: visible;
