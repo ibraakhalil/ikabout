@@ -40,24 +40,27 @@ section.header .header-left .header-menu ul {
 	justify-content: space-between;
 }
 section.header .header-left .header-menu li {
-	font-weight: 500;
-	font-family: montserrat;
+	color: var(--turki);
 	cursor: pointer;
-	position: relative;
 	display: flex;
-	text-transform: uppercase;
 	font-size: 14px;
+	font-weight: 600;
+	font-family: montserrat;
 	margin: 0 1.3rem;
-	color: var(--dark);
+	position: relative;
+	text-transform: uppercase;
 	transition: 0.3s;
+}
+section.header .header-left .header-menu li:hover {
+	color: var(--dark);
 }
 section.header .header-left .header-menu ul li::after {
 	content: "";
+	background: linear-gradient(to right, var(--primary), var(--copyright));
 	width: 0%;
 	height: 3px;
-	position: absolute;
-	background: linear-gradient(to right, var(--primary), var(--darkBlue));
 	left: 0;
+	position: absolute;
 	top: 160%;
 	transition: all 0.3s;
 }
@@ -134,7 +137,10 @@ section.header .setting.show .dropdown {
 	font-size: 13px;
 	text-transform: uppercase;
 }
-
+.theme-switch input {
+	width: 20px;
+	height: 20px;
+}
 section.header .bar {
 	display: none;
 }
@@ -282,7 +288,8 @@ section.services .services-top {
 }
 .services ul li p {
 	font-size: 13px;
-	padding: 10px 30px;
+	padding: 1.5rem 2rem;
+	color: var(--copyright);
 }
 
 
@@ -504,8 +511,8 @@ section.contact {
 	background: var(--background);
 	padding: 2rem 0;
 	font-family: montserrat;
+	padding-bottom: 5rem;
 }
-
 section.contact h1 {
 	text-align: center;;
 	color: var(--primary);
@@ -581,7 +588,7 @@ section.contact .right .input-wrapper div input:focus, section.contact .right .t
 } 
 section.contact .btn-2 {
 	text-align: center;
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 
 
@@ -595,15 +602,43 @@ section.contact .btn-2 {
 footer {
 	background: linear-gradient(to right,var(--primary),var(--secondary));
 	width: 100%;
-	padding: 20px 0;
+	padding: 3rem 0;
 	text-align: center;
 	font-weight: 500;
 }
+footer .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+footer .copyright {
+	display: flex;
+	align-items: center;
+	display: none;
+}
+footer .logo {
+	display: flex;
+	align-items: center;
+}
+footer .logo img {
+	width: 190px;
+}
+footer .social h3 {
+	font-size: 16px;
+	font-family: montserrat;
+	text-align: left;
+	margin-bottom: 1rem;
+	color: var(--para);
+}
 
-
-
-
-
+.copyright {
+	width: 100%;
+	background: var(--copyright);
+}
+.copyright p {
+	text-align: center;
+	color: var(--ternery);
+	padding: 5px;
+}
 
 
 

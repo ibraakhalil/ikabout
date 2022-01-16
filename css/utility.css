@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Open+Sans:wght@300;400;500&display=swap');
 
 :root {
-	--primary:#00a8ff;
+	--primary: #0094e1;
 	--secondary: #31fbf8;
 	--pure: #fff;
 	--dark: black;
 	--background: #ebebeb;
 	--para: #605555;
-	--darkBlue:#11074e;
-	--dropdown:#f4f8ff;
+	--darkBlue: #02052b;
+	--dropdown: #f4f8ff;
+	--copyright: #34495e;
+	--terquose: #1abc9c;
+	--turki: #006266;
+	--greek: #3742fa;
+	--prestige: #2f3542;
+	--grass: #009432;
+	--ternery: #b4b4b4;
 }
 
 
@@ -45,21 +52,29 @@ img {
 }
 
 
-
-.btn-primary {
-	padding: 15px 30px; margin-top: 10px;
+.btn-group {
+	margin-top: 4rem;
+}
+.btn {
 	font-size: 15px;
 	font-family: montserrat;
 	font-weight: 500;
-	background: linear-gradient(to right,var(--secondary),var(--primary));
 	border: none;
 	color: var(--pure);
 	border-radius: 3px;
-	box-shadow: 10px 10px 10px 0 #0000002b;
+	box-shadow: 5px 10px 12px 0 #00000025;
 	cursor: pointer;
-	transition: 0.3s;
+	width: 175px;
+	height: 42px;
 }
-.btn-primary span {
+.btn-primary {
+	background: var(--primary);
+	margin-right: 1rem;
+}
+.btn-secondary {
+	background: var(--terquose);
+}
+.btn span {
 	visibility: none;
 	opacity: 0;
 	width: 0px;
@@ -67,7 +82,7 @@ img {
 	transition: 0.3s;
 	position: relative;
 }
-.btn-primary span::after {
+.btn span::after {
 	content: "»";
 	position: absolute;
 	font-size: 20px;
@@ -75,7 +90,7 @@ img {
 	font-weight: 600;
 	color: var(--pure);
 }
-.btn-primary:hover span {
+.btn:hover span {
 	visibility: visible;
 	opacity: 1;
 	width: 15px;

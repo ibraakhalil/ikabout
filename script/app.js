@@ -1,3 +1,29 @@
+
+//////////////////////Header Shrink After Scroll///////////////////////
+
+(function(){
+    let header = document.querySelector("section.header");
+    let content = document.querySelector("section.content");
+
+    let options = {
+        threshold: 0.7
+    }
+    let shrinkHeader = function(entries){
+        if(entries[0].isIntersecting){
+            header.classList.remove("scrolled")
+        } else {
+            header.classList.add("scrolled")
+        }
+    }
+    let observer = new IntersectionObserver(shrinkHeader,options)
+
+    observer.observe(content)
+})();
+
+
+
+//////////////////////Responsive Navemenu Showing///////////////////////
+
 (function(){
     let spans = document.querySelectorAll(".education .right .skill > div span");
     let paras = document.querySelectorAll("section.education .right .skill > div div span p");
@@ -29,23 +55,25 @@
 })();
 
 
-let header = document.querySelector("section.header");
-let content = document.querySelector("section.content");
-console.log(content);
-
-window.addEventListener("scroll", function(){
-    if(window.scrollY > header.offsetHeight + 100){
-        header.classList.add("scrolled")
-    } else {
-        header.classList.remove("scrolled")
-    }
-})
 
 
+//////////////////////Setting cog Dropdown///////////////////////
 
 let setting = document.querySelector("section.header .setting i");
 
 setting.addEventListener("click",function(){
     setting.parentElement.classList.toggle("show")
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
