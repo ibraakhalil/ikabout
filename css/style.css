@@ -5,7 +5,7 @@
 	Header Area
 *******************************************/
 section.header {
-	background: linear-gradient(to right,var(--primary),var(--secondary));
+	background: var(--primary);
 	width: 100%;
 	height: 140px;
 	box-shadow: 0 8px 10px 0 var(--shadow);
@@ -22,6 +22,7 @@ section.header .header-wrapper {
 section.header .header-left {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 }
 section.header .header-left .logo img {
@@ -32,6 +33,9 @@ section.header .header-left h1 {
 	font-family: montserrat;
 	letter-spacing: -1px;
 	color: #464637;
+}
+.header-menu .theme {
+	display: none;
 }
 section.header .header-left .header-menu ul {
 	display: flex;
@@ -53,7 +57,7 @@ section.header .header-left .header-menu li:hover {
 }
 section.header .header-left .header-menu ul li::after {
 	content: "";
-	background: linear-gradient(to right, var(--primary), var(--copyright));
+	background: linear-gradient(to right, var(--headerText), var(--copyright));
 	width: 0%;
 	height: 3px;
 	left: 0;
@@ -64,12 +68,8 @@ section.header .header-left .header-menu ul li::after {
 section.header .header-left  .header-menu li:hover::after {
 	width: 100%;
 }
-
-
-section.header .header-right {
-	height: 100%;
+section.header .header-menu .social {
 	display: none;
-	align-items: center;
 }
 section.header .setting {
 	position: relative;
@@ -101,18 +101,59 @@ section.header .setting.show .dropdown {
 	visibility: visible;
 	background: var(--dropdown);
 }
-.dropdown .theme {
+.theme {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 10px 1rem;
 	background: var(--background);
+	box-shadow: 0px 7px 12px 0 var(--shadow);
 }
-.dropdown .theme img {
+.theme img {
 	height: 40px;
 	object-fit: cover;
 	width: 40px;
 	border-radius: 50%;
+}
+
+.theme-switch .switch {
+	width: 40px;
+	height: 20px;
+	display: grid;
+	background: var(--pure);
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	box-shadow: inset 0px -1px 5px 0px var(--shadow);
+}
+.theme-switch .switch input {
+	position: absolute;
+	opacity: 0;
+	z-index: -10;
+}
+.theme-switch .switch input:checked ~ div {
+	transform: translate3d(100%, 0px, 0px);
+}
+.theme-switch .switch div {
+	width: 20px;
+	height: 100%;
+	background: var(--headerText);
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.theme-switch .switch div i {
+	font-size: 14px;
+	position: absolute;
+}
+.theme-switch .switch div i:first-child {
+	opacity: 0;
+}
+.theme-switch .switch div i:last-child {
+	color: var(--pure);
+	opacity: 1;
 }
 .dropdown ul {
 	padding: 1rem 0.5rem;
@@ -128,7 +169,7 @@ section.header .setting.show .dropdown {
 }
 .dropdown ul li i {
 	font-size: 16px;
-	color: var(--primary);
+	color: var(--headerText);
 	margin-right: 12px;
 }
 .dropdown ul li a {
@@ -136,53 +177,18 @@ section.header .setting.show .dropdown {
 	font-size: 13px;
 	text-transform: uppercase;
 }
-.dropdown .theme-switch .switch {
-	width: 40px;
-	height: 20px;
-	display: grid;
-	background: var(--pure);
-	border-radius: 50px;
-	position: relative;
-	cursor: pointer;
-	box-shadow: inset 0px -1px 5px 0px var(--shadow);
-}
-.dropdown .theme-switch .switch input {
-	position: absolute;
-	opacity: 0;
-	z-index: -10;
-}
-.dropdown .theme-switch .switch input:checked ~ div {
-	transform: translate3d(100%, 0px, 0px);
-}
-.dropdown .theme-switch .switch div {
-	width: 20px;
-	height: 100%;
-	background: var(--primary);
-	border-radius: 50%;
-	cursor: pointer;
+
+section.header .social {
+	border-top: 1px solid var(--border);
 	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.dropdown .theme-switch .switch div i {
-	font-size: 14px;
-	position: absolute;
-}
-.dropdown .theme-switch .switch div i:first-child {
-	opacity: 0;
-}
-.dropdown .theme-switch .switch div i:last-child {
-	color: var(--pure);
-	opacity: 1;
-}
-.dropdown .social {
-	border-top: 1px solid var(--background);
-	text-align: center;
-	margin: 8px 15px 0px;
+	justify-content: space-evenly;
 	padding-top: 0.7rem;
-	padding-left: 10px;
+	margin: 1rem 1rem 0 1rem;
 }
-.dropdown .social i {
+section.header .social a {
+	margin: 0;
+}
+section.header .social i {
 	font-size: 18px;
 	margin: 0 3px;
 }
@@ -263,11 +269,22 @@ section.content .introduce {
 	width: 100%;
 	height: 100%;
 }
-.content .content-wrapper img {
-	width: 550px;
+.content .content-img::after {
+	content: "";
 	position: absolute;
-	right: 0;
-	bottom: 35px;
+	width: 320px;
+	height: 13px;
+	background: #00000024;
+	bottom: -50px;
+	left: 41%;
+	box-shadow: -89px -100px 40px 10px black;
+	border-radius: 50%;
+}
+.content .content-wrapper img {
+	width: 440px;
+	position: absolute;
+	right: 20px;
+	bottom: 55px;
 	z-index: 10;
 }
 
@@ -291,7 +308,6 @@ section.services .services-top {
 .services-top h1 {
 	text-align: center;
 	margin: 15px 0px;
-	color: var(--primary);
 }
 .services-top p {
 	text-align: center;
@@ -322,7 +338,7 @@ section.services .services-top {
 	height: 75px;
 	font-size: 25px;
 	background: var(--dropdown);
-	color: var(--primary);
+	color: var(--headerText);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -375,22 +391,16 @@ section.services .services-top {
 *******************************************/
 
 .about-me {
-	background: var(--dracula);
+	background: var(--background2);
 	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 85%, 0% 100%);
 }
 .about-me h1 {
 	padding-top: 4rem;
-	color: var(--primary);
 	font-family: montserrat;
 }
 .about-top {
 	text-align: center;
 	width: 100%;
-}
-.about-top h2 {
-	font-size: 35px;
-	font-family: montserrat;
-	color: var(--primary);
 }
 .about-wrapper {
 	display: grid;
@@ -404,19 +414,15 @@ section.about-me .left {
 .about-me .left img {
 	width: 75%;
 	margin-left: 2rem;
+	filter: drop-shadow(45px 8px 4px rgba(0, 0, 0, 0.24));
+	transform: scaleX(-1);
 }
-
 section.about-me .right {
 	align-self: baseline;
 	padding-top: 2rem;
 }
 section.about-me .right > div {
 	margin-bottom: 3rem;
-}
-.about-me .right h2 {
-	font-family: montserrat;
-	margin-bottom: 1rem;
-	color: var(--primary);
 }
 .about-me .right p {
 	line-height: 1.5;
@@ -519,7 +525,7 @@ section.education .left .timeline > div::before {
 	height: 5px;
 	border-radius: 50%;
 	position: absolute;
-	border: 4px solid var(--primary);
+	border: 4px solid var(--headerText);
 	left: -25px;
 	background: var(--pure);
 	top: 5px;
@@ -538,7 +544,7 @@ section.education .left .timeline > div p {
 	font-size: 13px;
 }
 section.education .timeline-header i {
-	color: var(--primary);
+	color: var(--headerText);
 	font-size: 24px;
 	margin-right: 0.6rem;
 }
@@ -566,7 +572,7 @@ section.education .right .skill > div div span {
 	height: 100%;
 	width: 50%;
 	display: block;
-	background: var(--primary);
+	background: var(--headerText);
 	border-radius: 50px;
 	position: relative;
 }
@@ -587,26 +593,25 @@ section.education .right .skill > div div span p {
 *******************************************/
 
 section.contact {
-	background: var(--dracula);
+	background: var(--background2);
 	padding: 2rem 0;
 	font-family: montserrat;
 	padding-bottom: 5rem;
 }
 section.contact h1 {
-	text-align: center;;
-	color: var(--primary);
+	text-align: center;
 	margin-bottom: 5rem;
 }
-
 section.contact .contact-wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1.5fr;
 	align-items: center;
+	grid-gap: 1rem;
 }
 section.contact .left > div {
 	display: flex;
 	align-items: center;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 }
 section.contact .left > div:nth-child(3) {
 	margin-bottom: 0rem;
@@ -614,7 +619,7 @@ section.contact .left > div:nth-child(3) {
 section.contact .left i {
 	font-size: 2rem;
 	margin-right: 1rem;
-	color: var(--primary);
+	color: var(--headerText);
 	width: 32px;
 }
 section.contact .left h3 {
@@ -686,7 +691,7 @@ section.contact .btn-2 {
 *******************************************/
 
 footer {
-	background: linear-gradient(to right,var(--primary),var(--secondary));
+	background: var(--primary);
 	width: 100%;
 	text-align: center;
 	font-weight: 500;
@@ -707,7 +712,7 @@ footer .social h3 {
 	color: var(--para);
 }
 footer .copyright {
-	border-top: 1px solid #c6caff29;
+	border-top: 1px solid var(--border);
 }
 footer .copyright p {
 	text-align: center;

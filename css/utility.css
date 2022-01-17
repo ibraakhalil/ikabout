@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Open+Sans:wght@300;400;500&display=swap');
 
 :root {
-	--primary: #00a8ff;
+	--headerText: #00a8ff;
 	--secondary: #31fbf8;
 	--pure: #fff;
 	--dark: black;
 	--background: #eaf0f4;
+	--background2: #cbeaf7;
 	--para: #605555;
 	--darkBlue: #02052b;
-	--dracula: #cbeaf7;
 	--dropdown: #f4f8ff;
 	--copyright: #34495e;
-	--terquose: #1abc9c;
-	--turki: #006266;
-	--greek: #3742fa;
-	--prestige: #2f3542;
-	--grass: #009432;
-	--ternery: #b4b4b4;
 	--nav: #272933;
 	--shadow: #00000015;
 	--button: #cadeea;
 	--after: #142b4d70;
+	--primary: #E9E4E6;
+	--border: #98999f29;
 }
 
 * {
@@ -37,15 +33,17 @@ body.checked {
 	--pure: black;
 	--dark: white;
 	--background: #101320;
+	--background2: #06222b;
 	--para: #ceb6b6;
-	--dropdown: #030d13;
+	--dropdown: #081a24;
 	--nav: #b2bbdd;
 	--shadow: #0000004f;
 	--darkBlue: #b9bbd0;
 	--copyright: #a0afb3;
-	--dracula: #06222b;
 	--button: #121b22;
 	--after: #1c364a;
+	--primary: #1B1F3A;
+	--border: #171b37;
 }
 
 body {
@@ -93,11 +91,11 @@ img {
 	height: 42px;
 }
 .btn-primary {
-	background: var(--button);
+	background: var(--primary);
 	margin-right: 1rem;
 }
 .btn-secondary {
-	background: var(--secondary);
+	background: var(--button);
 }
 .btn span {
 	visibility: none;
@@ -135,15 +133,12 @@ img {
 	display:flex;
 	align-items:center;
 }
-.clear {
-	clear:both;
-}
 
 .header-text {
 	font-size: 32px;
 	text-align: center;
 	font-family: montserrat;
-	color: var(--primary);
+	color: var(--headerText);
 	margin: 3rem 0;
 	text-transform: uppercase;
 }

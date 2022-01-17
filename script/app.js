@@ -59,31 +59,41 @@
 
 //////////////////////Setting cog Dropdown///////////////////////
 
+(function(){
 let setting = document.querySelector("section.header .setting i");
 setting.addEventListener("click",function(){
     setting.parentElement.classList.toggle("show")
 })
+})();
 
 
 
 
 //////////////////////Theme switcher///////////////////////
 
-let input = document.querySelector(".dropdown .theme-switch .switch input");
-let switching = document.querySelector(".dropdown .theme-switch .switch");
-let body = document.querySelector("body");
-switching.addEventListener("click", function(){
-    if(input.checked) {
-        body.classList.add("checked")
-    } else {
-        body.classList.remove("checked")
-    }
-})
-if(input.checked) {
-    body.classList.add("checked")
-} else {
-    body.classList.remove("checked")
-}
+(function(){
+    let switching = document.querySelectorAll(".theme-switch .switch");
+    switching.forEach(function(switchItem){
+        let input = switchItem.querySelector("input");
+        let body = document.querySelector("body");
+        
+        switchItem.addEventListener("click", function(){
+            if(input.checked) {
+                body.classList.add("checked")
+            } else {
+                body.classList.remove("checked")
+            }
+        })
+        if(input.checked) {
+            body.classList.add("checked")
+        } else {
+            body.classList.remove("checked")
+        }
+    })
+    
+})();
+
+
 
 
 let span = document.querySelectorAll(".header-text span");

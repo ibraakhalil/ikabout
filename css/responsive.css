@@ -25,9 +25,6 @@
     section.header .setting {
         display: none;
     }
-    section.header .social a:nth-child(1) {
-		display: none;
-	}
 	section.header .bar {
 		position: relative;
 		display: block;
@@ -38,38 +35,51 @@
 		transform: translate(-50%, -50%);
 		font-size: 26px;
 		cursor: pointer;
+		color: var(--dark);
 	}
 	section.header .bar i:nth-child(2) {
 		display: none;
 	}
 	.header-left .header-menu {
-        height: 100vh;
-        background: #ecd4d4;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        display: block;
-        transform: translateX(-100%);
-    }
+		width: 280px;
+		background: var(--dropdown);
+		position: absolute;
+		left: 0;
+		top: 100%;
+		display: block;
+		transform: translateX(-100%);
+		border-bottom-right-radius: 10px;
+		box-shadow: 0 7px 11px 0 var(--shadow);
+		overflow: hidden;
+	}
+	.header-menu .theme {
+		display: flex;
+	}
 	.header-left .header-menu ul {
-		list-style: none;
 		display: flex;
 		flex-direction: column;
-		align-items: start;
-		width: 200px;
-		margin: 2rem 0;
-		height: auto;
-	}
-
-	.header-left .header-menu li {
-		text-transform: uppercase;
-		font-family: montserrat;
-		padding: 1.5rem 0.8rem;
-		margin: 0;
 		width: 100%;
+		padding: 1rem 0.5rem;
+	}
+	section.header .header-left .header-menu li {
+		width: 100%;
+		padding: 1rem 1rem;
+		border-radius: 5px;
+		margin: 0;
+	}
+	.header-left .header-menu li:hover {
+		background: var(--pure);
 	}
 	.header-left .header-menu li::after {
 		display: none;
+	}
+	section.header .header-menu .social {
+		display: flex;
+		padding: 1rem 2rem;
+		margin: 1rem 0rem;
+	}
+	section.header .header-menu .social i {
+		font-size: 26px;
 	}
 
 	section.content .introduce {
@@ -92,8 +102,23 @@
         right: 0px;
         opacity: 0.4;
     }
+	.about-me {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 70% 95%, 0% 100%);
+		padding-bottom: 8rem;
+	}
+	.about-wrapper {
+		grid-template-columns: 1fr;
+		align-items: center;
+		justify-content: center;
+	}
+	.about-me .left img {
+		width: 50%;
+	}
 	section.about-me .right {
 		padding: 0;
+		justify-self: center;
+		margin-top: 2rem;
+		margin-left: 2rem;
 	}
 	section.contact .right .input-wrapper {
 		grid-template-columns: 1fr;
@@ -115,12 +140,6 @@
 *******************************************/
 
 @media (max-width: 768px) {
-	.container {
-		width: 90%;
-	}
-	section.header .social a:nth-child(1) {
-		display: none;
-	}
 	section.header .bar {
 		position: relative;
 		display: block;
@@ -138,36 +157,6 @@
 	section.header {
 		position: relative;
 	}
-	.header-left .header-menu {
-		height: 100vh;
-		background: #ecd4d4;
-		position: absolute;
-		left: 0;
-		top: 100%;
-		display: block;
-		transform: translateX(-100%);
-	}
-	.header-left .header-menu ul {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		width: 200px;
-		margin: 2rem 0;
-		height: auto;
-	}
-
-	.header-left .header-menu li {
-		text-transform: uppercase;
-		font-family: montserrat;
-		padding: 1.5rem 0.8rem;
-		margin: 0;
-		width: 100%;
-	}
-	.header-left .header-menu li::after {
-		display: none;
-	}
-
 	section.content .introduce {
 		margin-top: 5rem;
 	}
@@ -187,9 +176,36 @@
 	section.about-me .right {
 		padding: 0;
 	}
-	section.contact .right .input-wrapper {
+	section.contact .contact-wrapper {
 		grid-template-columns: 1fr;
+		grid-row-gap: 5rem;
 	}
+	section.contact .left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	section.contact .left > div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+	section.contact .left i {
+		margin-right: 0;
+	}
+	section.contact .left > div .info {
+		text-align: center;
+	}
+	section.contact .left h3 {
+		margin: 1rem 0;
+	}
+	section.contact .right .input-wrapper {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2rem;
+	}
+
 }
 
 
@@ -232,8 +248,10 @@
 	section.about-me .right .social {
 		text-align: center;
 	}
-
-
+	.services ul {
+		grid-template-columns: 1fr;
+		grid-gap: 4rem 8vw;
+	}
 	section.education .wrapper {
 		grid-template-columns: 1fr;
 	}
@@ -241,10 +259,7 @@
 		order: 1;
 		margin-top: 3rem;
 	}
-	section.contact .left {
-		margin-bottom: 4rem;
-	}
-	section.contact .contact-wrapper {
+	section.contact .right .input-wrapper {
 		grid-template-columns: 1fr;
 	}
 	section.contact .right .input-wrapper div label {
