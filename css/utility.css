@@ -8,6 +8,7 @@
 	--background: #eaf0f4;
 	--para: #605555;
 	--darkBlue: #02052b;
+	--dracula: #cbeaf7;
 	--dropdown: #f4f8ff;
 	--copyright: #34495e;
 	--terquose: #1abc9c;
@@ -17,12 +18,19 @@
 	--grass: #009432;
 	--ternery: #b4b4b4;
 	--nav: #272933;
-	--shadow: #00000018;
+	--shadow: #00000015;
+	--button: #cadeea;
+	--after: #142b4d70;
 }
 
-body {
-	background: var(--pure);
+* {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	transition: 0.3s;
 }
+
+
 body.checked {
 	--primary: #4b70ff;
 	--secondary: #07348a;
@@ -32,17 +40,16 @@ body.checked {
 	--para: #ceb6b6;
 	--dropdown: #030d13;
 	--nav: #b2bbdd;
-	--shadow: #ffffff14;
+	--shadow: #0000004f;
 	--darkBlue: #b9bbd0;
 	--copyright: #a0afb3;
+	--dracula: #06222b;
+	--button: #121b22;
+	--after: #1c364a;
 }
 
-
-* {
-	padding:0;
-	margin:0;
-	box-sizing:border-box;
-	transition: 0.3s;
+body {
+	background: var(--background);
 }
 
 .container {
@@ -52,13 +59,15 @@ body.checked {
 
 
 p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "montserrat", sans-serif;
 	font-size: 14px;
 	color: var(--para);
 	line-height: 1.5;
+	font-weight: 300;
 }
 ul, ol {
 	list-style: none;
+	font-family: "montserrat", sans-serif;
 }
 a {
 	text-decoration: none;
@@ -78,17 +87,17 @@ img {
 	border: none;
 	color: var(--dark);
 	border-radius: 3px;
-	box-shadow: 5px 10px 12px 0 #00000025;
+	box-shadow: 5px 10px 12px 0 var(--shadow);
 	cursor: pointer;
 	width: 175px;
 	height: 42px;
 }
 .btn-primary {
-	background: var(--primary);
+	background: var(--button);
 	margin-right: 1rem;
 }
 .btn-secondary {
-	background: var(--terquose);
+	background: var(--secondary);
 }
 .btn span {
 	visibility: none;
@@ -143,14 +152,19 @@ img {
 }
 .header-text span::after {
 	content: "";
-	width: 50%;
+	width: 0%;
 	height: 4px;
-	background: var(--secondary);
+	background: var(--after);
 	position: absolute;
 	display: inline-block;
-	bottom: -12px;
+	bottom: -16px;
 	left: 50%;
+	border-radius: 50px;
 	transform: translateX(-50%);
+	transition: 0.5s;
+}
+.header-text span.active::after {
+	width: 50%;
 }
 
 

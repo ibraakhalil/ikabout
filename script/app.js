@@ -1,5 +1,5 @@
 
-//////////////////////Header Shrink After Scroll///////////////////////
+//////////////////////Header height shrink After Scroll///////////////////////
 
 (function(){
     let header = document.querySelector("section.header");
@@ -22,7 +22,7 @@
 
 
 
-//////////////////////Responsive Navemenu Showing///////////////////////
+//////////////////////Responsive Nav menu Show-close ///////////////////////
 
 (function(){
     let spans = document.querySelectorAll(".education .right .skill > div span");
@@ -60,10 +60,10 @@
 //////////////////////Setting cog Dropdown///////////////////////
 
 let setting = document.querySelector("section.header .setting i");
-
 setting.addEventListener("click",function(){
     setting.parentElement.classList.toggle("show")
 })
+
 
 
 
@@ -86,7 +86,20 @@ if(input.checked) {
 }
 
 
+let span = document.querySelectorAll(".header-text span");
 
 
+span.forEach(function(item){
+    let option = {
+        rootMargin: "-200px"
+    }
+    let growingWith = function(entries){
+        if(entries[0].isIntersecting){
+            item.classList.add("active")
+        }
+    }
+    let observer = new IntersectionObserver(growingWith, option)
+    observer.observe(item)
+})
 
 

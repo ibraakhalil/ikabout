@@ -59,6 +59,7 @@ section.header .header-left .header-menu ul li::after {
 	left: 0;
 	position: absolute;
 	top: 160%;
+	transition: 0.3s;
 }
 section.header .header-left  .header-menu li:hover::after {
 	width: 100%;
@@ -114,16 +115,13 @@ section.header .setting.show .dropdown {
 	border-radius: 50%;
 }
 .dropdown ul {
-	font-family: montserrat;
-	margin-top: 1rem;
+	padding: 1rem 0.5rem;
 }
 .dropdown ul li {
-	padding: 0.7rem 1rem;
+	padding: 0.8rem 0.7rem;
 	display: flex;
 	align-items: center;
-}
-.dropdown ul li:last-child {
-	padding-bottom: 1.2rem;
+	border-radius: 5px;
 }
 .dropdown ul li:hover {
 	background: var(--pure);
@@ -146,7 +144,7 @@ section.header .setting.show .dropdown {
 	border-radius: 50px;
 	position: relative;
 	cursor: pointer;
-	box-shadow: inset 0px -1px 5px 0px #0000002e;
+	box-shadow: inset 0px -1px 5px 0px var(--shadow);
 }
 .dropdown .theme-switch .switch input {
 	position: absolute;
@@ -176,6 +174,17 @@ section.header .setting.show .dropdown {
 .dropdown .theme-switch .switch div i:last-child {
 	color: var(--pure);
 	opacity: 1;
+}
+.dropdown .social {
+	border-top: 1px solid var(--background);
+	text-align: center;
+	margin: 8px 15px 0px;
+	padding-top: 0.7rem;
+	padding-left: 10px;
+}
+.dropdown .social i {
+	font-size: 18px;
+	margin: 0 3px;
 }
 body.checked .dropdown .theme-switch .switch div i:first-child {
 	opacity: 1;
@@ -272,8 +281,9 @@ section.content .introduce {
 section.Services {
 	width: 100%;
 	min-height: 500px;
-	padding: 30px 0px;
+	padding: 2rem 0px;
 	font-family: montserrat;
+	padding-bottom: 6rem;
 }
 section.services .services-top {
 	margin-bottom: 6rem;
@@ -299,26 +309,51 @@ section.services .services-top {
 	grid-gap: 4rem 2rem;
 }
 .services ul li {
-	background: linear-gradient(45deg, var(--primary), var(--secondary));
 	position: relative;
 	border-radius: 10px;
 	padding-bottom: 1rem;
 	text-align: center;
 	min-height: 160px;
+	background: var(--dropdown);
+	box-shadow: 0 7px 10px var(--shadow);
 }
-.services ul li i {
+.services ul li .icon {
+	width: 75px;
+	height: 75px;
 	font-size: 25px;
-	background: var(--nav);
-	color: var(--pure);
-	position: absolute;
-	width: 60px;
-	height: 60px;
-	left: 50%;
+	background: var(--dropdown);
+	color: var(--primary);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
+	left: 50%;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
+}
+.services ul li .icon::before {
+	content: "";
+	position: absolute;
+	width: 33px;
+	height: 12px;
+	background: var(--background);
+	border-bottom-right-radius: 15px;
+	right: 98%;
+	top: 25px;
+	box-shadow: 20px 4px 0 -1px var(--dropdown);
+	z-index: -50;
+}
+.services ul li .icon::after {
+	content: "";
+	position: absolute;
+	width: 33px;
+	height: 12px;
+	background: var(--background);
+	border-bottom-left-radius: 15px;
+	left: 98%;
+	top: 25px;
+	box-shadow: -14px 5px 0 -1px var(--dropdown);
+	z-index: -50;
 }
 .services ul li h3 {
 	margin-top: 3rem;
@@ -340,7 +375,7 @@ section.services .services-top {
 *******************************************/
 
 .about-me {
-	background: var(--background);
+	background: var(--dracula);
 	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 85%, 0% 100%);
 }
 .about-me h1 {
@@ -373,10 +408,10 @@ section.about-me .left {
 
 section.about-me .right {
 	align-self: baseline;
-	padding-top: 5rem;
+	padding-top: 2rem;
 }
 section.about-me .right > div {
-	margin-bottom: 2.5rem;
+	margin-bottom: 3rem;
 }
 .about-me .right h2 {
 	font-family: montserrat;
@@ -386,10 +421,12 @@ section.about-me .right > div {
 .about-me .right p {
 	line-height: 1.5;
 	margin: 15px 0;
+	font-family: montserrat;
 }
 section.about-me .right p strong {
 	width: 175px;
 	position: relative;
+	font-weight: 600;
 }
 section.about-me .right p strong::after {
 	content: ":";
@@ -550,7 +587,7 @@ section.education .right .skill > div div span p {
 *******************************************/
 
 section.contact {
-	background: var(--background);
+	background: var(--dracula);
 	padding: 2rem 0;
 	font-family: montserrat;
 	padding-bottom: 5rem;
@@ -615,6 +652,7 @@ section.contact .right .input-wrapper div input {
 	border: none;
 	background: var(--dropdown);
 	color: var(--dark);
+	border-radius: 5px;
 }
 section.contact .right .text-area {
 	display: flex;
@@ -631,6 +669,8 @@ section.contact .right .text-area textarea {
 	border: none;
 	background: var(--dropdown);
 	color: var(--dark);
+	border-radius: 5px;
+	resize: none;
 }
 section.contact .btn-2 {
 	text-align: center;
@@ -648,25 +688,16 @@ section.contact .btn-2 {
 footer {
 	background: linear-gradient(to right,var(--primary),var(--secondary));
 	width: 100%;
-	padding: 3rem 0;
 	text-align: center;
 	font-weight: 500;
 }
 footer .wrapper {
 	display: flex;
 	justify-content: space-between;
-}
-footer .copyright {
-	display: flex;
-	align-items: center;
-	display: none;
-}
-footer .logo {
-	display: flex;
-	align-items: center;
+	padding: 3rem 0;
 }
 footer .logo img {
-	width: 190px;
+	width: 220px;
 }
 footer .social h3 {
 	font-size: 16px;
@@ -675,15 +706,13 @@ footer .social h3 {
 	margin-bottom: 1rem;
 	color: var(--para);
 }
-
-.copyright {
-	width: 100%;
-	background: var(--copyright);
+footer .copyright {
+	border-top: 1px solid #c6caff29;
 }
-.copyright p {
+footer .copyright p {
 	text-align: center;
-	color: var(--pure);
-	padding: 5px;
+	color: var(--nav);
+	padding: 10px 0;
 }
 
 
