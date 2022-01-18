@@ -55,6 +55,9 @@ body {
 	margin: 0 auto;
 }
 
+section {
+	padding-top: 3rem;
+}
 
 p {
 	font-family: "montserrat", sans-serif;
@@ -72,6 +75,7 @@ a {
 }
 img {
 	width: 100%;
+	object-fit: cover;
 }
 
 
@@ -137,10 +141,9 @@ img {
 .header-text {
 	font-size: 32px;
 	text-align: center;
-	font-family: montserrat;
 	color: var(--headerText);
-	margin: 3rem 0;
 	text-transform: uppercase;
+	font-family: "montserrat";
 }
 .header-text span {
 	position: relative;

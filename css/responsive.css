@@ -27,12 +27,16 @@
     }
 	section.header .bar {
 		position: relative;
-		display: block;
-		margin-right: 1rem;
+		display: flex;
+		width: 50px;
+		height: 50px;
+		background: var(--dropdown);
+		justify-content: center;
+		align-items: center;
+		border-radius: 5px;
+		box-shadow: 0 7px 12px var(--shadow);
 	}
 	section.header .bar i {
-		position: absolute;
-		transform: translate(-50%, -50%);
 		font-size: 26px;
 		cursor: pointer;
 		color: var(--dark);
@@ -63,15 +67,24 @@
 	}
 	section.header .header-left .header-menu li {
 		width: 100%;
-		padding: 1rem 1rem;
+		padding: 1.2rem 1rem;
 		border-radius: 5px;
 		margin: 0;
+		font-weight: 400;
 	}
 	.header-left .header-menu li:hover {
 		background: var(--pure);
 	}
 	.header-left .header-menu li::after {
 		display: none;
+	}
+	section.header .header-left .header-menu ul i {
+		margin-right: 1rem;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		color: var(--headerText);
+		width: 30px;
 	}
 	section.header .header-menu .social {
 		display: flex;
@@ -81,25 +94,23 @@
 	section.header .header-menu .social i {
 		font-size: 26px;
 	}
-
-	section.content .introduce {
-		margin-top: 5rem;
-	}
 	.content {
-		height: 620px;
+		height: calc(100vh - 140px);
 	}
-	.content-wrapper {
-		display: block;
+	.introduce h1 {
+		font-size: 8vw;
 	}
-    .content .content-img {
-        height: 100%;
-    }
+	.introduce h4 {
+		font-size: 3.5vw;
+	}
+	.content .content-img {
+		position: absolute;
+		top: 24%;
+		left: 50%;
+		width: 480px;
+		z-index: -10;
+	}
 	.content .content-wrapper img {
-        width: 605px;
-        position: absolute;
-        top: -60%;
-        z-index: -10;
-        right: 0px;
         opacity: 0.4;
     }
 	.about-me {
@@ -140,41 +151,29 @@
 *******************************************/
 
 @media (max-width: 768px) {
-	section.header .bar {
-		position: relative;
-		display: block;
-		margin-right: 1rem;
-	}
-	section.header .bar i {
-		position: absolute;
-		transform: translate(-50%, -50%);
-		font-size: 26px;
-		cursor: pointer;
-	}
-	section.header .bar i:nth-child(2) {
-		display: none;
-	}
-	section.header {
-		position: relative;
-	}
 	section.content .introduce {
-		margin-top: 5rem;
+		padding-top: 7rem;
 	}
 	.content {
-		height: 620px;
+		padding-top: 0;
 	}
 	.content-wrapper {
 		display: block;
 	}
-	.content .content-wrapper img {
+	/* .content .content-wrapper img {
 		width: 420px;
 		position: absolute;
 		top: -115px;
 		z-index: -10;
 		right: 0;
-	}
+	} */
 	section.about-me .right {
 		padding: 0;
+	}
+	section.about-me .right a {
+		display: block;
+		text-align: center;
+		width: 100%;
 	}
 	section.contact .contact-wrapper {
 		grid-template-columns: 1fr;
@@ -215,17 +214,45 @@
 *******************************************/
 
 @media (max-width: 580px) {
-
+	
+	section.header .header-left .logo img {
+		width: 220px;
+	}
+	section.header .bar {
+		width: 40px;
+		height: 40px;
+	}
+	section.header .bar i {
+		font-size: 22px;
+	}
+	.header-left .header-menu {
+		width: 230px;
+	}
+	section.header .header-left .header-menu li {
+		font-size: 12px;
+	}
+	section.header .header-left .header-menu ul i {
+		font-size: 18px;
+	}
+	.header-text {
+		font-size: 6vw;
+	}
 	.introduce h1 {
-		font-size: 2.5rem;
+		font-size: 10vw;
 	}
-
-	.content .content-wrapper img {
-		width: 350px;
-		top: -75px;
-		opacity: 0.5;
+	.introduce h4 {
+		font-size: 4.5vw;
 	}
-
+	.content {
+		padding-top: 0;
+	}
+	.content .content-img {
+		top: 22%;
+		left: 30%;
+		width: 480px;
+		height: 500px;
+		z-index: -10;
+	}
 	.about-me {
 		clip-path: none;
 		padding: 3rem 0;
@@ -244,6 +271,10 @@
 	section.about-me .right {
 		margin-top: 1rem;
 		justify-self: center;
+		margin-left: 0;
+	}
+	section.about-me .right p strong {
+		width: 132px;
 	}
 	section.about-me .right .social {
 		text-align: center;
@@ -265,6 +296,18 @@
 	section.contact .right .input-wrapper div label {
 		font-size: 14px;
 	}
+	footer .wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+	footer .social h3 {
+		margin-top: 3rem;
+		text-align: center;
+	}
+	footer .social a {
+		margin: 0 10px;
+	}
+
 }
 
 
