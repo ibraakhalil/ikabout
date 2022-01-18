@@ -212,7 +212,8 @@
 *******************************************/
 
 @media (max-width: 580px) {
-	
+
+
 	section.header .header-left .logo img {
 		width: 220px;
 	}
@@ -268,7 +269,9 @@
 	}
 	.about-me .left img {
 		width: 50%;
-		margin-left: -25px;
+		filter: drop-shadow(45px 0px 4px rgba(0, 0, 0, 0.24));
+		margin-left: -2rem;
+		transform: scaleX(1);
 	}
 	section.about-me .right {
 		margin-top: 1rem;
@@ -312,6 +315,12 @@
 
 }
 
+@media (max-width: 400px) {
+	.header-text span::after {
+		width: 45%;
+	}
+	
+}
 
 
 

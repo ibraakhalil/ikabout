@@ -147,6 +147,7 @@ img {
 }
 .header-text span {
 	position: relative;
+	display: inline-block;
 }
 .header-text span::after {
 	content: "";
