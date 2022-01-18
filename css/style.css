@@ -228,13 +228,15 @@ section.header .bar {
 .content {
 	position: relative;
 	padding-top: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
 }
 .content-wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 100%;
-	padding-top: 6rem;
+	margin-top: 6rem;
 }
 section.content .introduce {
 	width: 100%;
