@@ -112,7 +112,7 @@
 		z-index: -10;
 	}
 	.content .content-wrapper img {
-        opacity: 0.4;
+        opacity: 0.6;
     }
 	.about-me {
 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 70% 95%, 0% 100%);
