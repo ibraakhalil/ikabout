@@ -268,10 +268,8 @@
 		grid-template-columns: 1fr;
 	}
 	.about-me .left img {
-		width: 50%;
-		filter: drop-shadow(45px 0px 4px rgba(0, 0, 0, 0.24));
-		margin-left: -2rem;
-		transform: scaleX(1);
+		width: 60%;
+		margin-left: -1rem;
 	}
 	section.about-me .right {
 		margin-top: 1rem;
