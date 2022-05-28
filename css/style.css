@@ -195,10 +195,10 @@ section.header .social i {
 	font-size: 18px;
 	margin: 0 3px;
 }
-body.checked .dropdown .theme-switch .switch div i:first-child {
+body.checked .theme-switch .switch div i:first-child {
 	opacity: 1;
 }
-body.checked .dropdown .theme-switch .switch div i:last-child {
+body.checked .theme-switch .switch div i:last-child {
 	opacity: 0;
 }
 section.header .bar {
@@ -598,6 +598,12 @@ section.contact .contact-wrapper {
 	align-items: center;
 	grid-gap: 1rem;
 }
+section.contact .left {
+	background: #060606;
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+}
 section.contact .left > div {
 	display: flex;
 	align-items: center;
@@ -620,8 +626,8 @@ section.contact .left h3 {
 }
 section.contact .left p {
 	font-size: 13px;
+	width: 200px;
 }
-
 
 section.contact .right .input-wrapper {
 	display: grid;
