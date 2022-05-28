@@ -132,6 +132,9 @@
 		margin-top: 2rem;
 		margin-left: 2rem;
 	}
+	section.contact .contact-wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
 	section.contact .right .input-wrapper {
 		grid-template-columns: 1fr;
 	}
@@ -177,23 +180,20 @@
 		grid-template-columns: 1fr;
 		grid-row-gap: 5rem;
 	}
-	section.contact .left {
+	/* section.contact .left {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
+	} */
 	section.contact .left > div {
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: center; */
 		margin-bottom: 3rem;
 	}
 	section.contact .left i {
 		margin-right: 0;
-	}
-	section.contact .left > div .info {
-		text-align: center;
 	}
 	section.contact .left h3 {
 		margin: 1rem 0;
