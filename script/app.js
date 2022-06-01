@@ -22,7 +22,7 @@
 
 
 
-//////////////////////Responsive Nav menu Show-close ///////////////////////
+//////////////////////Responsive Nav menu Open-close ///////////////////////
 
 (function(){
     let spans = document.querySelectorAll(".education .right .skill > div span");
@@ -94,22 +94,52 @@ setting.addEventListener("click",function(){
 })();
 
 
+//////////////////////Header bottom border Growing///////////////////////
+
+(function(){
+    let span = document.querySelectorAll(".header-text span");
 
 
-let span = document.querySelectorAll(".header-text span");
-
-
-span.forEach(function(item){
-    let option = {
-        rootMargin: "-200px"
-    }
-    let growingWith = function(entries){
-        if(entries[0].isIntersecting){
-            item.classList.add("active")
+    span.forEach(function(item){
+        let option = {
+            rootMargin: "-200px"
         }
-    }
-    let observer = new IntersectionObserver(growingWith, option)
-    observer.observe(item)
-})
+        let growingWith = function(entries){
+            if(entries[0].isIntersecting){
+                item.classList.add("active")
+            }
+        }
+        let observer = new IntersectionObserver(growingWith, option)
+        observer.observe(item)
+    })
+})();
+
+
+
+
+//////////////////////Portfolio Data and Transition///////////////////////
+
+(function(){
+
+    let buttons = document.querySelectorAll(".portfolio .inner-top button")
+
+    console.log(buttons);
+
+
+
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+
 
 

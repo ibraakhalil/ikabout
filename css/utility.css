@@ -12,7 +12,7 @@
 	--dropdown: #f4f8ff;
 	--copyright: #34495e;
 	--nav: #272933;
-	--shadow: #00000015;
+	--shadow: #0000000f;
 	--button: #cadeea;
 	--after: #142b4d70;
 	--primary: #E9E4E6;
@@ -89,17 +89,20 @@ img {
 	border: none;
 	color: var(--dark);
 	border-radius: 3px;
-	box-shadow: 5px 10px 12px 0 var(--shadow);
 	cursor: pointer;
-	width: 175px;
-	height: 42px;
 }
 .btn-primary {
 	background: var(--primary);
 	margin-right: 1rem;
+	box-shadow: 5px 10px 12px 0 var(--shadow);
+	width: 175px;
+	height: 42px;
 }
 .btn-secondary {
 	background: var(--button);
+	box-shadow: 5px 10px 12px 0 var(--shadow);
+	width: 175px;
+	height: 42px;
 }
 .btn span {
 	visibility: none;

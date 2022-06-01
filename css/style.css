@@ -576,6 +576,87 @@ section.education .right .skill > div div span p {
 
 
 
+/******************************************
+	Portfolio Area
+*******************************************/
+
+
+
+section.portfolio .inner-top .btn-group {
+	text-align: center;
+}
+section.portfolio .inner-top .btn-group button {
+	width: auto;
+	height: auto;
+	padding: 8px 35px;
+	font-size: 12px;
+	margin: 5px;
+	background: var(--primary);
+}
+section.portfolio .inner-bottom {
+	margin: 3rem 0rem;
+}
+section.portfolio .inner-bottom .wrapper {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-gap: 2rem;
+}
+section.portfolio .inner-bottom .item {
+	background: var(--copyright);
+	min-height: 275px;
+	position: relative;
+	border-radius: 12px;
+	cursor: pointer;
+	overflow: hidden;
+}
+section.portfolio .inner-bottom .item .item-name {
+	font-weight: 600;
+	padding-top: 1rem;
+	padding-left: 1rem;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: var(--primary);
+	transition: all 0.5s;
+}
+section.portfolio .inner-bottom .item .hover-content {
+	font-family: poppins;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section.portfolio .inner-bottom .item .hover-content .wrapper-2 {
+	width: 90%;
+	overflow: hidden;
+}
+section.portfolio .inner-bottom .item .description {
+	color: white;
+	font-size: 14px;
+	margin-bottom: 1rem;
+	transform: translateX(-120%);
+	font-weight: 300;
+}
+section.portfolio .inner-bottom .item button {
+	transform: translateX(-110%);
+}
+section.portfolio .inner-bottom .item:hover .hover-content {
+	background: var(--shadow);
+}
+section.portfolio .inner-bottom .item:hover .item-name {
+	margin-top: -1.5rem;
+	opacity: 0;
+}
+section.portfolio .inner-bottom .item:hover button {
+	transform: translateX(-0%);
+}
+section.portfolio .inner-bottom .item:hover .description {
+	transform: translateX(-0%);
+}
+
+
 
 
 
