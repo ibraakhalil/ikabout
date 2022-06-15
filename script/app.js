@@ -1,4 +1,22 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////Header height shrink After Scroll///////////////////////
 
 (function(){
@@ -122,15 +140,52 @@ setting.addEventListener("click",function(){
 (function(){
 
     let buttons = document.querySelectorAll(".portfolio .inner-top button")
+    let portFolioWrapper = document.querySelector(".portfolio .wrapper")
 
-    console.log(buttons);
+    function item(target,index){
+        let appendItem = 
+        `<p class="item-name">${portfolioItemData[target][index].name}</p>
+            <div class="hover-content">
+                <div class="wrapper-2">
+                    <div class="description">
+                    ${portfolioItemData[target][index].description}
+                    </div>
+                    <button class="btn btn-primary"> Click Here <span></span></button>
+                </div>
+            </div>`;
+
+        return appendItem;
+    }
+
+    buttons.forEach(function(button,index){
+        button.addEventListener("click",function(e){
+            let target = e.target.innerText.toLowerCase();
+            if(target){
+                portFolioWrapper.innerHTML = ""
+                for(let i=0; i < portfolioItemData[target].length; i++){
+                    let creatItem = document.createElement("div")
+                    creatItem.setAttribute("class","item")
+                    creatItem.setAttribute("style",`background:url(./resource/Photo/portfolio/${portfolioItemData[target][i].background})`)
+                    creatItem.innerHTML = item(target,i)
+
+                    portFolioWrapper.append(creatItem)
+                }
+            }
+        })
+    })
+    for(let i=0; i < portfolioItemData["web"].length; i++){
+        let creatItem = document.createElement("div")
+        creatItem.setAttribute("class","item")
+        creatItem.setAttribute("style",`background:url(./resource/Photo/portfolio/${portfolioItemData["web"][i].background})`)
+        creatItem.innerHTML = item("web",i)
+
+        portFolioWrapper.append(creatItem)
+    }
 
 
 
 
 })();
-
-
 
 
 
