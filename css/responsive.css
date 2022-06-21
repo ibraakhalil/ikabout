@@ -105,11 +105,9 @@
 		font-size: 3.5vw;
 	}
 	.content .content-img {
-		position: absolute;
-		top: 24%;
-		left: 50%;
-		width: 480px;
-		z-index: -10;
+		width: 100%;
+		bottom: -5%;
+		right: -43%;
 	}
 	.content .content-wrapper img {
         opacity: 0.6;
@@ -175,6 +173,9 @@
 		display: block;
 		text-align: center;
 		width: 100%;
+	}
+	section.portfolio .inner-bottom .wrapper {
+		grid-template-columns: repeat(2,1fr);
 	}
 	section.contact .contact-wrapper {
 		grid-template-columns: 1fr;
@@ -250,11 +251,9 @@
 		padding-top: 0;
 	}
 	.content .content-img {
-		top: 22%;
-		left: 30%;
-		width: 480px;
-		height: 500px;
-		z-index: -10;
+		top: 0%;
+		left: 4%;
+		width: 913px;
 	}
 	.about-me {
 		clip-path: none;
@@ -292,6 +291,12 @@
 	section.education .left {
 		order: 1;
 		margin-top: 3rem;
+	}
+	section.portfolio .inner-bottom .wrapper {
+		grid-template-columns: repeat(1,1fr);
+	}
+	section.portfolio .inner-bottom .item .item-name {
+		font-size: 3vw;
 	}
 	section.contact .right .input-wrapper {
 		grid-template-columns: 1fr;

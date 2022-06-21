@@ -77,11 +77,26 @@
 
 //////////////////////Setting cog Dropdown///////////////////////
 
+
+
 (function(){
+
+    function windowClickExit(){
+        let dropDown = document.querySelector("section.header .dropdown")
+       
+    }
+
 let setting = document.querySelector("section.header .setting i");
+let setting2 = document.querySelector("section.header .setting");
+
+    
 setting.addEventListener("click",function(){
-    setting.parentElement.classList.toggle("show")
+    setting2.classList.toggle("show")
 })
+
+
+
+
 })();
 
 
@@ -94,6 +109,7 @@ setting.addEventListener("click",function(){
     switching.forEach(function(switchItem){
         let input = switchItem.querySelector("input");
         let body = document.querySelector("body");
+        console.log(body.className);
         
         switchItem.addEventListener("click", function(){
             if(input.checked) {
@@ -102,11 +118,11 @@ setting.addEventListener("click",function(){
                 body.classList.remove("checked")
             }
         })
-        if(input.checked) {
-            body.classList.add("checked")
-        } else {
-            body.classList.remove("checked")
-        }
+        // if(input.checked) {
+        //     body.classList.add("checked")
+        // } else {
+        //     body.classList.remove("checked")
+        // }
     })
     
 })();
@@ -150,7 +166,7 @@ setting.addEventListener("click",function(){
                     <div class="description">
                     ${portfolioItemData[target][index].description}
                     </div>
-                    <button class="btn btn-primary"> Click Here <span></span></button>
+                    <button class="btn btn-primary">View<span></span></button>
                 </div>
             </div>`;
 

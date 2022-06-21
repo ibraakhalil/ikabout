@@ -32,7 +32,7 @@ let portfolioItemData = {
         },
         {
             name : "SpaceX",
-            description : "Travelix is Travel agency Website. To make this web site I used HTML, CSS & JAVASCRIPT. It is not yet responsive",
+            description : "It is spaceX website clone Version. for this website i used HTML, CSS and PURE JAVASCRIPT ",
             background : "spaceX.jpg"
         },
         {
