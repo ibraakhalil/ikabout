@@ -16,8 +16,9 @@
 
 
 
-
+//////////////////////////////////////////////////////////////////////////////
 //////////////////////Header height shrink After Scroll///////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
 (function(){
     let header = document.querySelector("section.header");
@@ -75,7 +76,7 @@
 
 
 
-//////////////////////Setting cog Dropdown///////////////////////
+//////////////////////////////Setting cog Dropdown////////////////////////////////
 
 
 
@@ -102,7 +103,7 @@ setting.addEventListener("click",function(){
 
 
 
-//////////////////////Theme switcher///////////////////////
+///////////////////////////////Theme switcher///////////////////////////////////
 
 (function(){
     let switching = document.querySelectorAll(".theme-switch .switch");
@@ -128,7 +129,7 @@ setting.addEventListener("click",function(){
 })();
 
 
-//////////////////////Header bottom border Growing///////////////////////
+////////////////////////////////Header bottom border Growing////////////////////////////////
 
 (function(){
     let span = document.querySelectorAll(".header-text span");
@@ -151,7 +152,7 @@ setting.addEventListener("click",function(){
 
 
 
-//////////////////////Portfolio Data and Transition///////////////////////
+/////////////////////////////Portfolio Data and Transition///////////////////////////////////
 
 (function(){
 
@@ -204,7 +205,24 @@ setting.addEventListener("click",function(){
 })();
 
 
+/////////////////////////////////////Contact Form focus Effect///////////////////////////////
 
+
+(function(){
+
+    let inputDivs = document.querySelectorAll("section.contact .right .input-wrapper .input")
+
+    inputDivs.forEach(function(inputDiv){
+        let input = inputDiv.querySelector("input")
+
+        input.addEventListener("focusin",function(){
+            inputDiv.classList.add("focus");
+        })
+        input.addEventListener("focusout",function(){
+            inputDiv.classList.remove("focus");
+        })
+    })
+})();
 
 
 

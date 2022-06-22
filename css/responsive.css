@@ -323,6 +323,10 @@
 	.header-text span::after {
 		width: 45%;
 	}
+
+	section.contact .left {
+		padding: 2rem 2rem;
+	}
 	
 }
 

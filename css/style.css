@@ -227,9 +227,9 @@ section.header .bar {
 
 
 
-/******************************************
+/********************************************************
 	Content Area
-*******************************************/
+*********************************************************/
 
 .content {
 	position: relative;
@@ -238,6 +238,7 @@ section.header .bar {
 	display: flex;
 	align-items: center;
 	z-index: 0;
+	overflow: hidden;
 }
 .content-wrapper {
 	display: flex;
@@ -256,18 +257,21 @@ section.content .introduce {
 	font-size: 18px;
 }
 .introduce h1 {
-	font-family: montserrat;
-	font-size: 5.5vw;
+	font-family: "poppins";
+	font-size: 6.5vw;
 	word-spacing: 3px;
-	text-shadow: 10px 10px 10px #00000038;	
+	text-shadow: 10px 10px 10px #00000038;
 	color: #03ADFF;
+	-webkit-text-stroke: 1px;
+	-webkit-text-fill-color: transparent;
 }
 .introduce h4 {
 	font-size: 22px;
-	font-family: montserrat;
+	font-family: poppins;
 	color: gray;
 	text-shadow: 10px 10px 10px #00000038;
-	font-weight: 500;
+	font-weight: 300;
+	line-height: 0;
 }
 
 .content .btn-1 {
@@ -723,6 +727,28 @@ section.contact .left {
 	border-radius: 10px;
 	padding: 2rem 3rem;
 	box-shadow: 3px 3px 10px 0px var(--shadow);
+	overflow: hidden;
+	position: relative;
+}
+section.contact .left::after {
+	content: "";
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	position: absolute;
+	background: var(--secondary);
+	right: -54px;
+	bottom: -83px;
+}
+section.contact .left::before {
+	content: "";
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	background: var(--shadow);
+	right: 64px;
+	bottom: 134px;
 }
 section.contact .left .left-header {
 	padding-top: 1rem;
@@ -745,13 +771,20 @@ section.contact .left .left-info {
 section.contact .left .left-info > div {
 	display: flex;
 	align-items: center;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 section.contact .left .left-info > div i {
-	font-size: 24px;
+	font-size: 18px;
 	margin-right: 1rem;
-	color: var(--headerText);
+	color: var(--copyright);
+	width: 50px;
+	height: 50px;
+	background: var(--primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
 }
 section.contact .left .left-info > div h3 {
 	font-weight: 500;
@@ -786,25 +819,53 @@ section.contact .right .input-wrapper {
 	grid-gap: 1rem;
 	margin-bottom: 2rem;
 }
-section.contact .right .input-wrapper div {
+section.contact .right .input-wrapper > div {
 	display: flex;
 	flex-direction: column;
 }
 section.contact .right label {
-	font-size: 14px;
+	font-size: 13px;
+	font-weight: 300;
 }
 section.contact .right .input-wrapper div label {
 	margin-bottom: 1rem;
 	color: var(--dark);
 }
-section.contact .right .input-wrapper div input {
+section.contact .right .input-wrapper > div .input {
+	display: flex;
+	align-items: center;
+	background: var(--dropdown);
+	padding: 0rem 1rem;
+	border-radius: 5px;
 	height: 40px;
-	padding: 5px 1rem;
+	position: relative;
+	overflow: hidden;
+}
+section.contact .right .input-wrapper > div .input::after {
+	content: "";
+	width: 0%;
+	height: 3px;
+	background: var(--secondary);
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	transition: all 0.5s;
+}
+section.contact .right .input-wrapper > div .input.focus::after {
+	width: 100%;
+}
+section.contact .right .input-wrapper > div .input i {
+	font-size: 14px;
+	margin-right: 1rem;
+	color: var(--after);
+}
+section.contact .right .input-wrapper div input {
 	outline: none;
 	border: none;
-	background: var(--dropdown);
+	background: none;
 	color: var(--dark);
-	border-radius: 5px;
+	width: 100%;
+	height: 100%;
 }
 section.contact .right .text-area {
 	display: flex;
